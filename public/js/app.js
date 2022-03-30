@@ -16,18 +16,14 @@ weatherFrom.addEventListener('submit', (e) => {
 
     fetch(`/weather?address=${searchLocation}`).then((response) => {
         response.json().then((body) => {
-            if (body.error) {
-                console.log(body, error)
-                messageOut.textContent = ''
-                errorMessage.textContent = `${error}`
-            } else {
-                let { location, forecast, time } = body.data
-                console.log(body.data)
-                locationMessage.textContent = location
-                messageOut.textContent = forecast
-                timeMessage.textContent = time
-
-            }
+            let { location, forecast, time } = body.data
+            console.log(body.data)
+            locationMessage.textContent = location
+            messageOut.textContent = forecast
+            timeMessage.textContent = time
+        }).catch((err) => {
+            console.log(body, err)
+            messageOut.textContent = `${err}`
         })
     })
 })

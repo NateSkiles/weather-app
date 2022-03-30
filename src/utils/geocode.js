@@ -20,7 +20,7 @@ const geocode = (location, callback) => {
 
     request(options, (err, { body }) => {
         const data = body.features
-        if (err) {
+        if (err || !data) {
             callback('Unable to connect to location service. 🙁', undefined)
         } else if (data.length === 0) {
             callback('No locations found, try searching for a new location.', undefined)
