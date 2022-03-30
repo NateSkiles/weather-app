@@ -7,6 +7,10 @@ const forecast = require('./utils/forecast');
 console.log(path.join(__dirname, '../public'));
 
 const app = express();
+
+const name = 'Nate Skiles'
+
+// Set prt from process - if no port provided use 3000
 const port = process.env.PORT || 3000
 
 // Define paths for express config
@@ -24,15 +28,15 @@ app.use(express.static(publicDirPath));
 
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'weather',
-        name: 'Nate Skiles'
+        title: 'Weather',
+        name
     });
 });
 
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About me',
-        name: 'Nate Skiles'
+        name
     });
 });
 
@@ -40,7 +44,7 @@ app.get('/help', (req, res) => {
     res.render('help', {
         message: 'Hey, listen!',
         title: 'Help',
-        name: 'Nate Skiles'
+        name
     });
 });
 

@@ -5,6 +5,12 @@ const moment = require('moment');
 // Weatherstack API Key
 const API_KEY = process.env.API_KEY_WS
 
+/** Query the weatherstack API and return data about search location (time & forecast)
+ * 
+ * @param {*} lat Latitude
+ * @param {*} long Longitude
+ * @param {*} callback Handle response from API call
+ */
 const forecast = (lat, long, callback) => {
     // API Call
     const latLong = `${lat},${long}`
@@ -32,9 +38,12 @@ const forecast = (lat, long, callback) => {
             } else {
                 conjunction = 'and'
             }
-            // `Currently in ${name}, ${region} the weather is ${description[0]} with a temperature of${temperature}℉ ${conjunction} feels like ${feelsLike}℉\nThe Local time is: ${localTime}`)
-            
-            callback(undefined, { name, region, description: description[0], temperature, conjunction, feelsLike, localTime })
+
+            let location = `${name}, ${region}`
+            let forecast = `The weather is ${description[0]} with a temperature of ${temperature}℉ ${conjunction} feels like ${feelsLike}℉`
+            let time = `The Local time is: ${localTime}`
+
+            callback(undefined, { location, forecast, time })
         }
     })
 }

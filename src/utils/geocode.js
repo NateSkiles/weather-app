@@ -4,8 +4,11 @@ const request = require('request');
 // Mapbox token
 const API_KEY = process.env.API_KEY_MB
 
-
-
+/** Query mapbox API to by passing a search location and returning lat and long
+ * 
+ * @param {*} location Search location 
+ * @param {*} callback Handle response from API call
+ */
 const geocode = (location, callback) => {
     // Encode to address to URI
     const query = encodeURIComponent(location)

@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
 }
 
-.container {
+.container-body {
     flex-grow: 1;
 }
 
@@ -36,17 +36,41 @@ header a {
     text-decoration: none;
 }
 
-header a:hover {
-    color: purple;
+.container-body a {
+    color: #1e90ff;
+    margin-right: 16px;
+    text-decoration: none;
+}
+
+.body-message {
+    margin-bottom: 3em;
+}
+
+header a:hover, .container-body a:hover {
+    color: #800080;
     text-decoration: none;
 }
 
 header a:active {
-    color: purple;
+    color: #800080;
+}
+
+footer span:hover {
+    color: #1e90ff;
+    cursor:text;
 }
 
 .portrait {
     width: 250px;
+}
+
+.avi {
+    display: flex;
+    justify-content: center;
+}
+
+.avi .portrait {
+    border-radius: 50%;
 }
 
 input {
@@ -65,5 +89,5 @@ button {
 }
 
 button:hover {
-    background-color: purple;
+    background-color: #800080;
 }
