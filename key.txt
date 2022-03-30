@@ -1,5 +1,0 @@
-# Weatherstack API Key
-API_KEY_WS="bd1524e1469883ccd6f4aa0343ddfb2e"
-
-# Mapbox API Key
-API_KEY_MB="pk.eyJ1Ijoic3dhcmx5IiwiYSI6ImNsMDk1cWZ1ZDA1OTEzYnBtYnJram0xdG8ifQ.sxp__uFzEvGUdVSt97p0zQ"
