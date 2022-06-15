@@ -29,7 +29,7 @@ const forecast = (lat, long, callback) => {
         } else {
             let { name, region } = body.location
             let { weather_descriptions: description, temperature, feelslike: feelsLike, localtime } = body.current
-
+            console.log(body.current);
             let localTime = moment(localtime).format('LT')
             let conjunction
 

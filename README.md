@@ -1,1 +1,3 @@
-```nodemon src/app.js -e js,hbs```
+```npm run start```
+```npm run dev```
+```npm run deploy```
