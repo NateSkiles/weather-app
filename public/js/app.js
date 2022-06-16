@@ -5,6 +5,10 @@ const messageOut = document.querySelector('#message-out')
 const locationMessage = document.querySelector('#location')
 const timeMessage = document.querySelector('#time')
 
+const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+console.log(tz);
+
 weatherFrom.addEventListener('submit', (e) => {
     e.preventDefault()
 
@@ -21,6 +25,7 @@ weatherFrom.addEventListener('submit', (e) => {
             locationMessage.textContent = location
             messageOut.textContent = forecast
             timeMessage.textContent = time
+            console.log(time);
         }).catch((err) => {
             console.log(body, err)
             messageOut.textContent = `${err}`
