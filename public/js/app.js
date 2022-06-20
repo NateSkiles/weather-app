@@ -15,17 +15,18 @@ weatherFrom.addEventListener('submit', (e) => {
     const searchLocation = encodeURIComponent(search.value)
 
     locationMessage.textContent = ''
-    time.textContent = ''
+    // time.textContent = ''
     messageOut.textContent = "Loading..."
 
     fetch(`/weather?address=${searchLocation}`).then((response) => {
         response.json().then((body) => {
-            let { location, forecast, time } = body.data
+            // let { location, forecast, time } = body.data
+            let { location, forecast } = body.data
 
             locationMessage.textContent = location
             messageOut.textContent = forecast
-            timeMessage.textContent = time
-            console.log(time);
+            // timeMessage.textContent = time
+            // console.log(time);
         }).catch((err) => {
             console.log(body, err)
             messageOut.textContent = `${err}`

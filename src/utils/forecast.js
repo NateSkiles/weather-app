@@ -41,10 +41,11 @@ const forecast = (lat, long, callback) => {
 
             let location = `${name}, ${region}`
             let forecast = `The weather is ${description[0]} with a temperature of ${temperature}℉ ${conjunction} feels like ${feelsLike}℉`
-            let time = `The Local time is: ${localTime}`
-            console.log(localTime);
+            // let time = `The Local time is: ${localTime}`
+            // console.log(localTime);
 
-            callback(undefined, { location, forecast, time })
+            // callback(undefined, { location, forecast, time })
+            callback(undefined, { location, forecast })
         }
     })
 }
