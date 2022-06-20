@@ -3,7 +3,7 @@ const search = document.querySelector('input')
 const errorMessage = document.querySelector('#error-message')
 const messageOut = document.querySelector('#message-out')
 const locationMessage = document.querySelector('#location')
-const timeMessage = document.querySelector('#time')
+// const timeMessage = document.querySelector('#time')
 
 const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
